@@ -1,20 +1,30 @@
-@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@600&family=Indie+Flower&family=Kalam:wght@300&family=Nabla&family=Permanent+Marker&family=Poppins:ital,wght@1,300&family=Roboto:ital,wght@0,400;1,300&family=Rubik+Dirt&family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text&family=Lobster&display=swap&family=Josefin+Sans&family=Edu+NSW+ACT+Foundation:wght@600&family=Indie+Flower&family=Kalam:wght@300&family=Nabla&family=Permanent+Marker&family=Poppins:ital,wght@1,300&family=Roboto:ital,wght@0,400;1,300&family=Rubik+Dirt&family=Silkscreen&display=swap");
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  transition: all 1s ease;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease;
 }
-body {
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  height: 100vh;
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: black;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(0, 247, 255);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .container {
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 1px 1px 10px 1px gray;
-  width: 30%;
+  box-shadow: 1px 1px 10px 1px rgba(128, 128, 128, 0.575);
+  width: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -25,7 +35,7 @@ body {
 
 h1 {
   margin: 0;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Indie Flower", cursive;
   font-size: 40px;
 }
 
@@ -54,8 +64,7 @@ h1 {
 
 .btn:hover {
   border-color: black;
-  background: none;
-  color: black;
+  color: white;
   transform: scale(1.1);
 }
 
@@ -64,24 +73,147 @@ h1 {
   color: white;
 }
 
+.controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.controls button {
+  margin: 0 10px;
+  border: 1px solid transparent;
+  background: none;
+  font-size: 22px;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  border-color: black;
+}
+
+.scroll {
+  position: absolute;
+  top: 86%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+}
+
+.scroll a {
+  text-decoration: none;
+  color: black;
+}
+
+.scroll .saved-scroll {
+  font-size: 25px;
+  font-family: "Permanent Marker";
+}
+
+.scroll i {
+  font-size: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.scores {
+  text-align: center;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding-top: 105px;
+  width: 100%;
+  border-top: 1px solid black;
+  margin-top: 20px;
+  padding-bottom: 50px;
+}
+
+.scores li {
+  list-style: none;
+  font-size: 20px;
+}
+
+.savedTitle {
+  position: absolute;
+  top: 104%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-family: "Lobster", cursive;
+  text-decoration: underline;
+}
+
+.dark-mode,
+.light-mode {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.light-mode {
+  display: none;
+}
+
+.dark-mode i,
+.light-mode i {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 650px) {
+  .controls {
+    justify-content: center;
+  }
+  .controls button {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   .container {
     width: 50%;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 990px) {
   .container {
     width: 80%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .savedTitle {
+    font-size: 18px;
+  }
+  .scores {
+    padding-top: 80px;
+  }
+
+  .scores li {
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 430px) {
   .container {
     display: block;
   }
-  .home {
-    border-bottom: 2px solid black;
-  }
   .guest {
-    border-top: 2px solid black;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 242px) {
+  .savedTitle {
+    font-size: 11px;
+  }
+  .scores li {
+    font-size: 8px;
   }
 }

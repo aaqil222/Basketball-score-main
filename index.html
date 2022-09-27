@@ -6,34 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BasketBall Score Board</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-
+<body onload="getList()" id="body">
   <div class="container">
     <div class="home">
       <h1>Home</h1>
       <div class="score">
         <h1 class="home-score" id="home-score">0</h1>
       </div>
-      <button class="btn" id="add1" onclick="add(1)">+1</button>
-      <button class="btn" id="add2" onclick="add(2)">+2</button>
-      <button class="btn" id="add3" onclick="add(3)">+3</button>
+      <button class="btn" id="add1 add" onclick="add(1)" title="Add 1 point">+1</button>
+      <button class="btn" id="add2 add" onclick="add(2)" title="Add 2 point">+2</button>
+      <button class="btn" id="add3 add" onclick="add(3)" title="Add 3 point">+3</button><br>
     </div>
     <div class="guest">
       <h1>Guest</h1>
       <div class="score">
         <h1 class="guest-score" id="guest-score">0</h1>
       </div>
-      <button class="btn" id="add1" onclick="addG(1)">+1</button>
-      <button class="btn" id="add2" onclick="addG(2)">+2</button>
-      <button class="btn" id="add3" onclick="addG(3)">+3</button>
+      <button class="btn" id="add1 add" onclick="addG(1)" title="Add 1 point">+1</button>
+      <button class="btn" id="add2 add" onclick="addG(2)" title="Add 2 point">+2</button>
+      <button class="btn" id="add3 add" onclick="addG(3)" title="Add 3 point">+3</button><br>
     </div>
-    <button class="save" id="save" onclick="save()">Save</button>
-    <button class="reset" id="reset" onclick="reset()">Reset</button>
   </div>
-  <ul class="scores" id="scores"></ul>
+  <div class="controls">
+    <button class="reset" id="reset" onclick="reset()">Reset</button>
+    <button class="save" id="save" onclick="save()">Save</button>
+  </div>
+  <div class="scroll">
+    <div class="saved-scroll">Saved Scores</div><br>
+    <a href="#scores">
+      <i class='bx bxs-chevrons-down bx-flip-horizontal bx-fade-up' style='color:#00dcb7'></i>
+    </a>
+  </div>
+  <div class="dark-mode" onclick="darkMode()">
+    <i class='bx bx-moon'></i>
+  </div>
+  <div class="light-mode" onclick="lightMode()">
+    <i class='bx bx-sun'></i>
+  </div>
+  <h1 class="savedTitle">Saved Scores</h1>
+  <div class="scores" id="scores"></div>
   <script src="script.js"></script>
 </body>
 
