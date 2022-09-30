@@ -168,6 +168,27 @@ h1 {
   font-size: 40px;
 }
 
+.delete {
+  position: absolute;
+  top: 104%;
+  left: 0.4%;
+  cursor: pointer;
+  padding: 10px;
+  background: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  border: 1px solid red;
+  background: red;
+  font-weight: bold;
+}
+
+.delete:hover {
+  background: none;
+  color: red;
+  box-shadow: 3px 3px 10px 1px rgba(128, 128, 128, 0.356);
+}
+
 @media screen and (max-width: 650px) {
   .controls {
     justify-content: center;
@@ -195,7 +216,11 @@ h1 {
   .scores {
     padding-top: 80px;
   }
-
+  .delete {
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+  }
   .scores li {
     font-size: 15px;
   }
@@ -213,7 +238,51 @@ h1 {
   .savedTitle {
     font-size: 11px;
   }
+  .delete {
+    font-size: 11px;
+    padding: 0;
+    border-radius: 3px;
+  }
   .scores li {
     font-size: 8px;
+  }
+}
+
+@media screen and (max-height: 656px) {
+  .scores {
+    margin-top: 50px;
+  }
+  .savedTitle {
+    top: 116%;
+  }
+  .delete {
+    top: 116%;
+  }
+}
+
+@media screen and (max-height: 430px) {
+  .scores {
+    margin-top: 70px;
+  }
+  .savedTitle {
+    top: 120%;
+  }
+  .delete {
+    top: 120%;
+  }
+}
+
+@media screen and (max-height: 780px) {
+  .scroll {
+    margin-top: 50px;
+  }
+  .scores {
+    margin-top: 90px;
+  }
+  .savedTitle {
+    top: 118%;
+  }
+  .delete {
+    top: 118%;
   }
 }

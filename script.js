@@ -64,3 +64,9 @@ function lightMode() {
   darkModeBtn.style.display = "block";
   scores.style.borderColor = "black";
 }
+
+function deleteAll() {
+  localStorage.clear();
+  scoreList.remove();
+  window.location.reload();
+}
